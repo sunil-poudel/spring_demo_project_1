@@ -3,8 +3,8 @@
 web dependency, select language version and then download zip by clicking generate.
 3. open the project in intellij (or any other ide).
 
-4. add dependency in pom.xml (first allow project to build automatically in compiler settings)
-        <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
+4. I recommend creating new spring boot project inside intellij itself instead of
+from start.spring.io so everything is ok.
+to do so, create new spring boot project in intellij,
+    then add dependencies web and dev-tools in creation dialog.
+    dev-tools will allow auto reloading the page on save.

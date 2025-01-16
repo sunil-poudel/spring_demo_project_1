@@ -1,0 +1,14 @@
+1. on build.gradle
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+   if using maeven, go to pom.xml, and add actuator dependencies.
+
+2. on src/main/resources/application.properties
+        management.endpoints.web.exposure.include=health,info
+        management.info.env.enabled=true
+
+3. now, we can access actuators health and info in our app,
+        http://localhost:8080/actuator/info
+        http://localhost:8080/actuator/health
+
+
