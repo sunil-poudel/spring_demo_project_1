@@ -1,0 +1,8 @@
+1. by exposing endpoints, we expose important info
+    so we may want to secure them. To do so,
+    add security dependency in pom file(if maeven)
+    or in gradle do this:
+            implementation 'org.springframework.boot:spring-boot-starter-security'
+
+2. now, when we try to access any endpoints, we'll be prompted
+    to log in. default username is user, password is given in run terminal.

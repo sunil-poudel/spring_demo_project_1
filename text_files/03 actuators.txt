@@ -7,8 +7,28 @@
         management.endpoints.web.exposure.include=health,info
         management.info.env.enabled=true
 
+   to expose all the endpoints,
+        management.endpoints.web.exposure.include=*
+
+   after exposing all endpoints, if we want to hide some endpoints,
+        management.endpoints.web.exposure.exclude=info
+
 3. now, we can access actuators health and info in our app,
         http://localhost:8080/actuator/info
         http://localhost:8080/actuator/health
 
+4. by default, info is empty {}
+    but we can add info via application.properties.
 
+        info.app.name=Sunil's first spring application
+        info.app.details=Sunil is learning spring boot and thinks it'll help him a ton in future
+        info.app.version=1.0.0
+
+    then actuator/info site will display data as a JSON like:
+        {
+          "app": {
+            "name": "Sunil's first spring application",
+            "details": "Sunil is learning spring boot and thinks it'll help him a ton in future",
+            "version": "1.0.0"
+          }
+        }
