@@ -1,0 +1,10 @@
+@RestController //sets up rest controller
+public class HelloWorldController {
+    @GetMapping("/") //handle http get requests
+    public String sayHello(){
+        return "Hello World! from Sunil";
+    }
+}
+
+-- then when we type localhost:8080 in browser,
+    we get Hello World! as output.
