@@ -1,0 +1,14 @@
+1. in application.properties,
+    city.name=Pokhara
+    district.name=Kaski
+
+2. in java file,
+    @Value("${city.name}")
+    private String cityName;
+    @Value("${district.name}")
+    private String districtName;
+
+    @GetMapping("/about-pokhara")
+    public String aboutPokhara(){
+        return "city: "+cityName+", district: "+districtName;
+    }
