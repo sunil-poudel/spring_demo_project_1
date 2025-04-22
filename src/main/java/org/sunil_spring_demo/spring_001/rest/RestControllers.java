@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RestControllers {
 
+    //means that Spring will look for a property named city.name
+    // in the configuration file and inject its value into the cityName field.
     @Value("${city.name}")
     private String cityName;
+
     @Value("${district.name}")
     private String districtName;
 
@@ -25,5 +28,10 @@ public class RestControllers {
     @GetMapping("/about-me")
     public String about(){
         return "My name is Sunil Poudel. I am from Puranchaur!";
+    }
+
+    @GetMapping("/wrc")
+    public String aboutWrc(){
+        return "WRC is wonderful!";
     }
 }

@@ -3,4 +3,4 @@
 
 2. by setting context-path, our all request will work only on
     localhost:8009/myApp/.... e.g. health, info, custom mappings etc.
-    server.servlet.context-path=/myApp
+        server.servlet.context-path=/myApp
