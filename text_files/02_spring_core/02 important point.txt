@@ -1,0 +1,9 @@
+If we have main @SpringBootApplication annotated class in one package
+and our desired injections with components in other package, we need to add these lines
+above @SpringBootApplication
+
+    //component scan will now scan both of the packages!
+    @ComponentScan(basePackages = {
+        "org.sunil_spring_demo.spring_001,
+        com.spring_core"})
+    @SpringBootApplication

@@ -1,0 +1,45 @@
+1.
+
+--> i. create new interface Coach
+    ii.
+        public interface Coach {
+            void getDailyWorkout();
+        }
+
+2. Add component annotation to a class,
+Component annotation marks class as spring bean, makes it available for
+dependency injection.
+
+--> i. Create new class CricketCoach.
+    ii. Add component annotation to CricketCoach
+
+        @Component
+        public class CricketCoach implements Coach{
+            @Override
+            public String getDailyWorkout() {
+                return "Practice bowling for 10 minutes daily!";
+            }
+        }
+
+3. Create rest controller.
+    Autowired annotation tells Spring to inject dependency,
+    optional if there's only one constructor, then create mapping.
+
+
+@RestController
+public class DemoRestController {
+    //define private field for the dependency
+    private Coach myCoach;
+
+    //define constructor for dependency injection
+    @Autowired
+    public DemoRestController(Coach coach){
+        myCoach = coach;
+    }
+
+    //create mapping
+    @GetMapping("/dailyWorkout")
+    public String getDailyWorkout(){
+        return myCoach.getDailyWorkout();
+    }
+}
