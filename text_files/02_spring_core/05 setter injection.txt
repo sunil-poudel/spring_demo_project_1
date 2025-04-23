@@ -1,0 +1,12 @@
+1. done by calling setter methods on our class.
+
+2. steps:
+    --> i. create setter methods (we can give any methods
+            with autowired, not just setters).
+        ii. configure dependency injection with autowired annotation
+
+        //setter injection
+        @Autowired
+        public void setAnimalRestController(Dog dog){
+            this.dog = dog;
+        }

@@ -8,8 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class AnimalRestController {
     private Dog dog;
 
+    //constructor injection
+//    @Autowired
+//    public AnimalRestController(Dog dog){
+//        this.dog = dog;
+//    }
+
+    //setter injection
     @Autowired
-    public AnimalRestController(Dog dog){
+    public void setAnimalRestController(Dog dog){
         this.dog = dog;
     }
 
