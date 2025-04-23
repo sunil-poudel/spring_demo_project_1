@@ -1,4 +1,4 @@
-If we have main @SpringBootApplication annotated class in one package
+1. If we have main @SpringBootApplication annotated class in one package
 and our desired injections with components in other package, we need to add these lines
 above @SpringBootApplication
 

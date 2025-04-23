@@ -1,0 +1,20 @@
+~~~ From ChatGPT ~~~
+
+Inversion of Control (IoC) means the control of creating objects and managing their dependencies is inverted — it’s handled by the Spring container instead of being manually coded by you.
+
+🧱 Without IoC (Traditional Approach):
+
+    Car car = new Car(new Engine()); // You manually create dependencies
+
+✅ With IoC in Spring:
+
+    @Component
+    public class Car {
+        private Engine engine; //Engine is interface considering previous txt files 01 and 02.
+
+        @Autowired
+        public Car(Engine engine) {
+            this.engine = engine;
+        }
+    }
+Now Spring manages how Car gets its Engine.

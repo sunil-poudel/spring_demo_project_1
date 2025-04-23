@@ -43,3 +43,8 @@ public class DemoRestController {
         return myCoach.getDailyWorkout();
     }
 }
+
+4. What constructor injection will do for us behind the scenes
+
+    Coach theCoach = new CricketCoach();
+    DemoRestController controller = new DemoRestController(theCoach)

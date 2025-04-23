@@ -1,0 +1,40 @@
+-> Dependency Injection (DI) is a design pattern used to implement
+ Inversion of Control (IoC) — it lets you hand over the
+ responsibility of providing dependencies to a framework like Spring.
+
+-> Instead of a class creating its own dependencies,
+the dependencies are injected from the outside.
+
+💡 Simple Analogy:
+Imagine a coffee machine. Instead of the coffee machine
+creating its own beans, water, and milk, someone fills it
+up from outside — that’s dependency injection.
+
+🔧 In Code (Without DI):
+
+    public class Car {
+        private Engine engine = new Engine(); // Tight coupling
+
+        public void drive() {
+            engine.start();
+        }
+    }
+
+✅ With DI (Spring Way):
+
+    @Component
+    public class Car {
+        private Engine engine;
+
+        @Autowired // Spring injects the dependency
+        public Car(Engine engine) {
+            this.engine = engine;
+        }
+
+        public void drive() {
+            engine.start();
+        }
+    }
+
+Here, Spring creates the Engine and injects it into Car.
+
