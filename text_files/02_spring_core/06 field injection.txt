@@ -1,0 +1,6 @@
+1. injecting dependencies by setting field values directly. (even private)
+2. no longer recommended by spring.io team, makes code harder to unit test.
+        @Autowired
+        private Dog dog;
+
+

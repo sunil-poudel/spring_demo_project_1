@@ -1,0 +1,41 @@
+````` Imp! Look till last!!! `````
+1. suppose we have multiple implements of Animal each annotated as @Component.
+if we do constructor injection, (or setter injection) in such case
+there will be error as we have multiple implementations.
+For e.g.
+    @Component
+    public class Dog implements Animal{
+
+    }
+
+    @Component
+    public class Cat implements Animal{
+
+    }
+
+    @Component
+    public class Sparrow implements Animal{
+
+    }
+
+and in rest controller,
+    private Animal animal;
+
+    @Autowired
+    public RestController(Animal animal){
+        this.animal = animal;
+    }
+
+2.  we get error, because there are multiple components Dog, Cat, Sparrow
+    so we need to add qualifier to RestController Autowired constructor/setters
+
+    to fix that,
+    @Autowired
+        public RestController(@Qualifier("dog") Animal animal){
+            this.animal = animal;
+        }
+
+3. Imp: the qualifier name must be same as of component, just small alphabet
+    in first character.
+
+    Also I had to make changes to rest controller, go and check that out!!!

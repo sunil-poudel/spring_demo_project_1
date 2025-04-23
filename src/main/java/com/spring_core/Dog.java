@@ -9,3 +9,21 @@ public class Dog implements Animal{
         return "Barks";
     }
 }
+
+@Component
+class Cat implements Animal{
+
+    @Override
+    public String produceSound() {
+        return "Purrs";
+    }
+}
+
+@Component
+class Sparrow implements Animal{
+
+    @Override
+    public String produceSound() {
+        return "Chirp";
+    }
+}
