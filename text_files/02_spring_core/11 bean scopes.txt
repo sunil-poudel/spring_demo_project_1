@@ -1,0 +1,33 @@
+1. By default, beans are singleton by default. that means
+    if we add multiple qualifiers to inject beans
+    they are always pointed to same instance.
+
+    @Autowired
+    public RestController(
+        @Qualifier("cat") Animal animal1,
+        @Qualifier("cat") Animal animal2
+    ) {
+        this.animal1 = animal1;
+        this.animal2 = animal2;
+    }
+
+    @GetMapping("/status")
+    public String status(){
+        return "status: "+(animal1==animal2);
+    }
+
+    result will be true, because singleton is default scope.
+
+2. we can make spring to create new instances for each beans we create,
+we can do like:
+    if we want Cat's instance to be multiple,
+
+    @Component
+    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    public class Cat{
+        ...
+    }
+
+    and rest same as above.
+    the status will be false.
+

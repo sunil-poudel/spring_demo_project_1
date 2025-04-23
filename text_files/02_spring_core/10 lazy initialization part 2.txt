@@ -1,0 +1,8 @@
+1. In part 1, we saw that we were able to initialize only the required
+components by lazy annotation. But to do so for all
+components would be tedious. So there is solution for that.
+
+2. so, in application.properties
+    spring.main.lazy-initialization=true
+
+    then, all beans are lazy, no beans created until needed.

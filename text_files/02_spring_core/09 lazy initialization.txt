@@ -1,0 +1,31 @@
+1. by default, when application starts, all beans are initialized
+    --> @Component etc.
+
+2. spring will create will create new instance of each and make them available.
+we can create constructor with some println statement to see proof.
+
+3. instead of creating all beans first, we can specify lazy initialization.
+    bean will be initialized only on one of the following cases:
+    i. it is needed for dependency injection.
+    ii. it is explicitly requested.
+
+   for this, lazy annotation is given to the class.
+
+4. Here in this case, while program is run, only Pokhara and Kathmandu are initialized but
+    Dharan will be initialized only when necessary.
+        @Component
+        @Lazy
+        class Dharan implements City{
+            public Dharan(){
+                System.out.println("Created city "+getClass().getSimpleName());
+            }
+            @Override
+            public String cityCenter() {
+                return "Dharan Chowk";
+            }
+
+            @Override
+            public String specialFeature() {
+                return "Green city!";
+            }
+        }
