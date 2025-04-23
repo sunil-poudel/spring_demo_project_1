@@ -1,0 +1,28 @@
+1. Primary can be alternative to qualifiers if we don't want
+to be specific.
+in such case, we can write Primary annotation  above the
+class which implements interface.
+e.g. Dog, Cat, Sparrow here for Animal interface.
+
+2. We can mix both Primary and Qualifier, but no use as Qualifier will have
+higher priority. So qualifier is recommended, due to specific nature
+ and higher priority, unless otherwise. Also, no multiple Primary allowed.
+
+3. example:
+    i. Cat class
+        @Component
+        @Primary
+        class Cat implements Animal{
+
+            @Override
+            public String produceSound() {
+                return "Purrs";
+            }
+        }
+
+    ii. rest controller
+        @Autowired
+        public AnimalRestController(Animal animal) {
+            this.animal = animal;
+        }
+        //we see that now no qualifier annotation is needed.

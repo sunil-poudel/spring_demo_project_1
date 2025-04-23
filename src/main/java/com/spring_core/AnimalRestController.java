@@ -18,8 +18,14 @@ public class AnimalRestController {
 //        this.dog = dog;
 //    }
 
+    //@Qualifier annotation
+//    @Autowired
+//    public AnimalRestController(@Qualifier("sparrow") Animal animal) {
+//        this.animal = animal;
+//    }
+
     @Autowired
-    public AnimalRestController(@Qualifier("sparrow") Animal animal) {
+    public AnimalRestController(Animal animal) {
         this.animal = animal;
     }
 

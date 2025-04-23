@@ -35,6 +35,10 @@ and in rest controller,
             this.animal = animal;
         }
 
+        //now spring knows it is dog which we are working on, if we set to cat
+         or sparrow it'll switch to them.
+        //same method for setters as well.
+
 3. Imp: the qualifier name must be same as of component, just small alphabet
     in first character.
 
