@@ -7,3 +7,12 @@ above @SpringBootApplication
         "org.sunil_spring_demo.spring_001,
         com.spring_core"})
     @SpringBootApplication
+
+2. Alternative way:
+    @SpringBootApplication(
+           scanBasePackages = {"org.sunil_spring_demo.spring_001, com.spring_core"}
+   )
+
+3. If we have subpackages in same package with main @SpringBootApplication,
+we don't have to add component scan.
+

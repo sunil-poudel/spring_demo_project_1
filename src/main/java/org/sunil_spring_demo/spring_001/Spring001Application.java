@@ -4,8 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan(basePackages = {"org.sunil_spring_demo.spring_001, com.spring_core"})
-@SpringBootApplication
+//@ComponentScan(basePackages = {"org.sunil_spring_demo.spring_001, com.spring_core"})
+@SpringBootApplication(
+        scanBasePackages = {"org.sunil_spring_demo.spring_001, com.spring_core"}
+)
 public class Spring001Application {
 
     public static void main(String[] args) {
