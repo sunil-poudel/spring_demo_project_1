@@ -1,0 +1,15 @@
+1. Define methods for init and destroy.
+
+2. Add annotations: @PostConstruct and @PreDestroy.
+
+3. After this step, startUp() method will be call upon starting,
+   and cleanUp() method will be called right after stopping the application.
+    @PostConstruct
+    public void startUp(){
+        System.out.println("Started: "+ getClass().getSimpleName());
+    }
+
+    @PreDestroy
+    public void cleanUp(){
+        System.out.println("Cleaned up: "+getClass().getSimpleName());
+    }

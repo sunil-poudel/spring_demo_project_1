@@ -20,7 +20,7 @@
 
 2. we can make spring to create new instances for each beans we create,
 we can do like:
-    if we want Cat's instance to be multiple,
+    if we want Cat's instance to be multiple, SCOPE_PROTOTYPE
 
     @Component
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)

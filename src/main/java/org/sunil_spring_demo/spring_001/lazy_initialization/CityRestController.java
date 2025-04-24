@@ -1,5 +1,7 @@
 package org.sunil_spring_demo.spring_001.lazy_initialization;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -47,6 +49,16 @@ public class CityRestController{
     @GetMapping("status")
     public String status(){
         return "Status: "+(city1 == city2);
+    }
+
+    @PostConstruct
+    public void startUp(){
+        System.out.println("Started: "+ getClass().getSimpleName());
+    }
+
+    @PreDestroy
+    public void cleanUp(){
+        System.out.println("Cleaned up: "+getClass().getSimpleName());
     }
 
 }
