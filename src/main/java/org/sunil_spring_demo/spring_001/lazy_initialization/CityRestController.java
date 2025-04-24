@@ -26,25 +26,30 @@ public class CityRestController{
 //        this.city = city;
 //    }
 
-    @Autowired
-    public  CityRestController(
-            @Qualifier("kathmandu") City city1,
-            @Qualifier("kathmandu") City city2
+//    @Autowired
+//    public  CityRestController(
+//            @Qualifier("kathmandu") City city1,
+//            @Qualifier("kathmandu") City city2
+//
+//    ){
+//        this.city1 = city1;
+//        this.city2 = city2;
+//    }
 
-    ){
-        this.city1 = city1;
-        this.city2 = city2;
+    @Autowired
+    public CityRestController(@Qualifier("janaki") City city){
+        this.city = city;
     }
 
-//    @GetMapping("/cityCenter")
-//    public String cityCenter(){
-//        return city.cityCenter();
-//    }
-//
-//    @GetMapping("/specialFeature")
-//    public String specialFeature(){
-//        return city.specialFeature();
-//    }
+    @GetMapping("/cityCenter")
+    public String cityCenter(){
+        return city.cityCenter();
+    }
+
+    @GetMapping("/specialFeature")
+    public String specialFeature(){
+        return city.specialFeature();
+    }
 
     @GetMapping("status")
     public String status(){
@@ -112,5 +117,17 @@ class Dharan implements City{
     @Override
     public String specialFeature() {
         return "Green city!";
+    }
+}
+
+class Janakpur implements City{
+    @Override
+    public String cityCenter() {
+        return "Janaki Chowk";
+    }
+
+    @Override
+    public String specialFeature(){
+        return "Birthplace of Sita!";
     }
 }

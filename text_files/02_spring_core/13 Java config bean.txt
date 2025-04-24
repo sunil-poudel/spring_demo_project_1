@@ -1,0 +1,56 @@
+1. @Bean is used in the cases where we need to make 3rd party class
+   exposed as a Spring bean.
+
+2. Notice that we are not adding @Component to the class.
+
+        class Janakpur implements City{
+           @Override
+           public String cityCenter() {
+               return "Janaki Chowk";
+           }
+
+           @Override
+           public String specialFeature(){
+               return "Birthplace of Sita!";
+           }
+       }
+
+        @Autowired
+        public CityRestController(@Qualifier("janakpur") City city){
+            this.city = city;
+        }
+
+3.  If we try to run this right away, it will not run because Janakpur is
+    not annotated with Component, so it's not bean.
+    We can configure it as a bean using Configuration file as follows:
+
+        @Configuration
+        public class CityConfig {
+            @Bean
+            public City janakpur(){
+                return new Janakpur();
+            }
+        }
+
+4. We can also set bean id so that it can be used as qualifier name instead
+    of method name itself.
+            in CityConfig.java
+
+            @Configuration
+            public class CityConfig {
+                @Bean("janaki")
+                public City janakpur(){
+                    return new Janakpur();
+                }
+            }
+
+            in rest controller.
+                    @Autowired
+                    public CityRestController(@Qualifier("janaki") City city){
+                        this.city = city;
+                    }
+
+4.  In real life, this is used specifically in the cases where we need to inject
+    3rd party classes into our spring as a Bean.
+    This specific example above is not real use example as we could use
+    Component annotation here.
